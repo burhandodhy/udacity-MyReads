@@ -5,6 +5,7 @@ const Book = ({ onUpdateBook, book }) => {
 	};
 
 	const shelf = book.shelf ? book.shelf : 'none';
+	const authors = book.authors ? book.authors.join(', ') : '';
 
 	return (
 		<div className="book">
@@ -33,7 +34,7 @@ const Book = ({ onUpdateBook, book }) => {
 				</div>
 			</div>
 			<div className="book-title">{book.title}</div>
-			{book?.author?.length > 0 && <div className="book-authors">{book.author}</div>}
+			<div className="book-authors">{authors}</div>
 		</div>
 	);
 };
